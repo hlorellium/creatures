@@ -1,0 +1,36 @@
+type Query {
+farm: Farm!
+animal: Animal
+}
+
+type Animal {
+    id: ID!
+    breed: breed
+    addedBy: User!
+    breeder: String!
+    weights: [Weight!]!
+}
+
+type Farm {
+    animals: [Animal!]!
+    count: Int!
+}
+
+type AuthPayload {
+    token: String
+    user: User
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    animals: [Animal!]!
+}
+
+type Weight {
+    id: ID!
+    animal: Animal!
+    mass: Int!
+
+}
